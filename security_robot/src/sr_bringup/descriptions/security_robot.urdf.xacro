@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="security_robot">
 
-  <xacro:include filename="$(find sec_rob_pkg)/descriptions/materials.xacro" />
+  <xacro:property name="pkg_name" value="sr_bringup" />
+
+  <xacro:include filename="$(find ${pkg_name})/descriptions/materials.xacro" /> 
 
   <link name="base_link"/>
   
@@ -9,14 +11,14 @@
     <visual name="chassis_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/chassis.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/chassis.dae"/>
       </geometry>
       <material name="orange"/>
     </visual>
     <collision name="chassis_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/chassis.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/chassis.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -30,14 +32,14 @@
     <visual name="holder_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/holder.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/holder.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision name="holder_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/holder.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/holder.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -51,14 +53,14 @@
     <visual name="holder_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/holder.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/holder.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision name="holder_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/holder.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/holder.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -72,14 +74,14 @@
     <visual name="wheel_bl_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision name="wheel_bl_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -93,14 +95,14 @@
     <visual name="wheel_br_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision name="wheel_br_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -114,14 +116,14 @@
     <visual name="cover_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/cover.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/cover.dae"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision name="cover_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/cover.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/cover.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -135,14 +137,14 @@
     <visual name="wheel_fl_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision name="wheel_fl_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -156,14 +158,14 @@
     <visual name="wheel_fr_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision name="wheel_fr_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/wheel.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/wheel.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -177,14 +179,14 @@
     <visual name="camera_visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/camera.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/camera.dae"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision name="camera_collision">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find sec_rob_pkg)/meshes/camera.dae"/>
+        <mesh filename="file://$(find ${pkg_name})/meshes/camera.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -257,5 +259,7 @@
     <parent link="cover"/>
     <child link="camera"/>
   </joint> 
+
+  <xacro:include filename="$(find ${pkg_name})/descriptions/gz_plugins.xacro" /> 
 
 </robot>

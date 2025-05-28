@@ -1,0 +1,55 @@
+# Topics to bridge between ROS 2 and Gazebo
+# COMMANDS: ROS → Gazebo (we send commands TO the robot)
+- ros_topic_name: "/cmd_vel"
+  gz_topic_name: "/model/security_robot/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# SENSOR DATA: Gazebo → ROS (robot sends data TO us)
+- ros_topic_name: "/odom"
+  gz_topic_name: "/model/security_robot/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry" 
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
+
+# JOINT STATES: This is critical for robot description and tf2
+- ros_topic_name: "/joint_states"
+  gz_topic_name: "/model/security_robot/joint_state"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: GZ_TO_ROS
+
+# SIMULATION TIME: Gazebo → ROS (CRITICAL for fixing your clock warning)
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
+# JOINT COMMANDS: ROS → Gazebo
+- ros_topic_name: "/joint_commands"
+  gz_topic_name: "/model/security_robot/joint_commands"
+  ros_type_name: "std_msgs/msg/Float64MultiArray"
+  gz_type_name: "gz.msgs.Double_V"
+  direction: ROS_TO_GZ
+
+# Camera topics (Gazebo → ROS) - Fixed topic names to match your launch file
+- ros_topic_name: "/security_robot/camera/image_raw"
+  gz_topic_name: "/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/security_robot/camera/camera_info"
+  gz_topic_name: "/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# Lidar topics (Gazebo → ROS)
+- ros_topic_name: "/scan"
+  gz_topic_name: "/lidar"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
