@@ -34,8 +34,8 @@ ackermann_steering_controller:
     # Wheel separation and wheelbase
     wheel_separation: 0.26  # Distance between left and right wheels (2 * 0.13)
     wheelbase: 0.6  # Distance between front and rear axles (0.30003964 + 0.29996036)
-    
-    # Joint names
+    wheel_radius: 0.05    # Joint names
+
     front_wheels_names: 
       - dof_wheel_holder_fl
       - dof_wheel_holder_fr
@@ -86,6 +86,7 @@ ackermann_steering_controller:
         max_acceleration: 1.0  # m/s^2
         min_velocity: -2.0  # m/s
         min_acceleration: -1.0  # m/s^2
+        has_jerk_limits: false
     angular:
       z:
         has_velocity_limits: true
@@ -94,3 +95,4 @@ ackermann_steering_controller:
         max_acceleration: 1.0  # rad/s^2
         min_velocity: -1.0  # rad/s
         min_acceleration: -1.0  # rad/s^2
+        has_jerk_limits: false

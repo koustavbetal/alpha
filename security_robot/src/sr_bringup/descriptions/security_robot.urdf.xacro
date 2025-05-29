@@ -198,7 +198,7 @@
   </link>
 
 
-  <joint name="base_chassis_link" type="fixed">
+  <joint name="base_chassis" type="fixed">
     <parent link="base_link"/>
     <child link="chassis"/>
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -260,6 +260,6 @@
     <child link="camera"/>
   </joint> 
 
-  <xacro:include filename="$(find ${pkg_name})/descriptions/gz_plugins.xacro" /> 
+  <xacro:include filename="$(find ${pkg_name})/descriptions/gz_plugins.gazebo" /> 
 
 </robot>

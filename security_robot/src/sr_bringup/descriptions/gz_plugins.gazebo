@@ -14,7 +14,20 @@
             <remapping>/controller_manager/robot_description:=/robot_description</remapping>
             </ros>
         </plugin>
+
+        <plugin filename="gz-sim-joint-state-publisher-system"
+          name='gz::sim::systems::JointStatePublisher'>
+          <topic>joint_states</topic>
+          <joint_name>dof_holder_fl</joint_name>
+          <joint_name>dof_holder_fr</joint_name>
+          <joint_name>dof_wheel_bl</joint_name>
+          <joint_name>dof_wheel_br</joint_name>
+          <joint_name>dof_wheel_holder_fl</joint_name>
+          <joint_name>dof_wheel_holder_fr</joint_name>
+        </plugin>
     </gazebo>
+
+
 
   <!-- Camera sensor plugin -->
     <gazebo reference="camera">
@@ -22,7 +35,7 @@
             <always_on>true</always_on>
             <update_rate>30</update_rate>
             <visualize>true</visualize>
-            <pose>0 0 0 0 0 0</pose>  <!-- Add this line -->
+            <pose>0 0 0 0 0 0</pose>
             <camera>
             <horizontal_fov>1.047</horizontal_fov>
             <image>
